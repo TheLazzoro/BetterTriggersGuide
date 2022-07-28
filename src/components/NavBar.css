@@ -1,0 +1,51 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #222;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #0f0;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #333;
+}
+
+Link:hover {
+  background-color: #333;
+}
+
+.mainNav {
+  color: #eee;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 100;
+}
+
+.mainNav:hover {
+  background-color: transparent;
+}
+
+.navlink {
+  color: #eee;
+  display: inline-block;
+  margin: 0;
+  line-height: 30px;
+}
+
+.downloadlink:hover {
+  background-color: #06c;
+}
