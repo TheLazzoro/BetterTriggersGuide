@@ -112,6 +112,30 @@ export const Home = () => {
                     </div>
                 </div>
                 <hr className="solid"></hr>
+                <p/>
+                <p/>
+                These are the major highlights of the editor in its current state. More features are planned:
+                <ol>
+                    <li>Trigger template/library importer.</li>
+                    <li>Keybinding menu.</li>
+                    <li>Action- and condition definitions: Define your own re-usable actions and conditions.</li>
+                    <li>More GUI natives: GetLocalPlayer, RemoveLocation, GetEventDamage, BlzCreateFrame and more.</li>
+                    <li>Local variables.</li>
+                    <li>Editor color themes.</li>
+                    <li>and more...</li>
+                </ol>
+                <hr className="solid"></hr>
+                <p/>
+                <p/>
+                If this sounds great to you, be aware that working with an external tool
+                like this comes with its set of drawbacks dictated by the limitations of working outside the boundaries of the World Editor:
+                <ol>
+                    <li>There are no warnings when deleting anything inside the World Editor. The World Editor does not know what exists outside of it.
+                        Better Triggers only scans for changes when you save your map. However, it will notify you with a list of changed triggers.</li>
+                    <li>Renaming regions, cameras and sounds will reset all their references in Better Triggers.
+                        They have no ID so it's only possible to track them via name.</li>
+                    <li>Renaming an object editor ID will reset all its references in Better Triggers.</li>
+                </ol>
             </header>
         </div>
     )
