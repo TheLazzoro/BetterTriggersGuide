@@ -13,6 +13,7 @@ const NavBar: FC = (props) => {
           </li>
   
           <li className="navbar-li" style={{float: "left" }}><Link className="navlink" to="/Guide">Guide</Link></li>
+          <li className="navbar-li" style={{float: "left"}}><Link className="navlink downloadlink" to="/Download">GitHub</Link></li>
           <li className="navbar-li" style={{float: "left"}}><Link className="navlink downloadlink" to="/Download">Download</Link></li>
         </ul>
       </nav>
