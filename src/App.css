@@ -22,15 +22,33 @@
 }
 
 .App-home {
+  align-items: center;
+  flex-direction: column;
   display: flex;
+  padding: 1px;
   padding-left: 20%;
   padding-Right: 20%;
+}
+
+main {
+  background-color: #282828;
+  color: #ddd;
+  padding-left: 20%;
+  padding-Right: 20%;
+  margin: 0px;
+  padding-bottom: 400px;
 }
 
 .App-guide {
   padding: 1px;
   padding-left: 50px;
   min-height: 100vh;
+}
+
+.App-download {
+  display: flex;
+  padding-left: 20%;
+  padding-Right: 20%;
 }
 
 .App-link {
@@ -57,23 +75,24 @@ hr.solid {
 
 h2 {
   color: #69c;
+  padding-top: 20px;
 }
 
 h3 {
   color: #77a;
 }
 
-.column {
+.column1 {
   float: left;
-  width: 40%;
+  width: 50%;
 }
 
-.column-image {
+.column2 {
   float: right;
-  width: 300px;
+  width: 20%;
 }
 
-.column-image:hover {
+.column2:hover {
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
@@ -99,7 +118,7 @@ dialog {
 
 .default-li {
   text-decoration: none;
-  color: #66f;
+  color: rgb(119, 162, 255);
 }
 
 .toc-list, .toc-list ol {

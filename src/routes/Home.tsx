@@ -8,6 +8,7 @@ import gifLiveScript from "../images/LiveScript.gif"
 import pngSyntax from "../images/syntax.png"
 import gifParameters from "../images/TriggerParameters.gif"
 import gifGUIConvert from "../images/GUI2CustomScript.gif"
+import pngArray2D from "../images/Array2D.png"
 
 export const Home = () => {
     return (
@@ -15,7 +16,7 @@ export const Home = () => {
             <header className="App-header App-home">
 
                 <h1>Better Triggers</h1>
-                <h2><a style={{ color: "#ddd" }}>A custom trigger editor for </a><a style={{ color: "#f90" }}>Warcraft III: Reforged</a></h2>
+                <h2 style={{ paddingTop: "0px" }}><a style={{ color: "#ddd" }}>A custom trigger editor for </a><a style={{ color: "#f90" }}>Warcraft III: Reforged</a></h2>
                 <p />
                 <div style={{ boxShadow: "0px 0px 8px #ffffff", WebkitBoxShadow: "0px 0px 15px #f90" }}>
                     <img src={pngBT} style={{ outline: "10px", outlineColor: "#fff" }} />
@@ -44,9 +45,12 @@ export const Home = () => {
                 <p />
                 <p />
 
+            </header>
+
+            <main>
                 <div className="row">
-                    <div className="column">
-                        <h2>Source files outside the World Editor:</h2>
+                    <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>Source files outside the World Editor:</h2>
                         <p>
                             As part of the reworked format all triggers, scripts, variables and categories are no longer saved with your map, but are represented as individual files and folders in your filesystem.
                         </p>
@@ -54,85 +58,98 @@ export const Home = () => {
                             *This change required the removal of comments in the "trigger explorer" because the World Editor allows comments with identical names; something a filesystem does not.
                         </p>
                     </div>
-                    <div className="column-image">
+                    <div className="column2">
                         <ImageComponent img={gifFileSystem} />
                     </div>
                 </div>
                 <hr className="solid"></hr>
 
                 <div className="row">
-                    <div className="column">
-                        <h2>Convert an existing map's triggers:</h2>
+                    <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>Convert an existing map's triggers:</h2>
                         <p>If you are already working on a Warcraft 3 map and wish to port your triggers to this editor, you can.
                             The built-in trigger converter tool scans your map for triggers, variables, scripts etc. and converts them to source files readable by this editor.</p>
                         <p style={{ fontStyle: "italic" }}>*The illustrated image shows a converted project of mine.</p>
                     </div>
-                    <div className="column-image">
+                    <div className="column2">
                         <ImageComponent img={pngDS} />
                     </div>
                 </div>
                 <hr className="solid"></hr>
 
                 <div className="row">
-                    <div className="column">
-                        <h2>Script live update:</h2>
+                    <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>Script live update:</h2>
                         <p>The editor automatically detects changes made to custom script files in your filesystem. This allows you to work directly in whatever text editor you want and removes the need to copy/paste from external source files into the editor.</p>
                     </div>
-                    <div className="column-image">
+                    <div className="column2">
                         <ImageComponent img={gifLiveScript} />
                     </div>
                 </div>
                 <hr className="solid"></hr>
 
                 <div className="row">
-                    <div className="column">
-                        <h2>Syntax Highlighting:</h2>
+                    <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>Syntax Highlighting:</h2>
                         <p>The built-in script editor has basic syntax highlighting for both Jass and Lua files, but that is pretty much the only extra feature. You are encouraged to use superior external text editors like VSCode. However, extra features for the built-in text editor in the future are not out of question.</p>
                     </div>
-                    <div className="column-image">
+                    <div className="column2">
                         <ImageComponent img={pngSyntax} />
                     </div>
                 </div>
                 <hr className="solid"></hr>
 
                 <div className="row">
-                    <div className="column">
-                        <h2>"StarCraft II"-like GUI:</h2>
-                        <p>The GUI has been re-imagined and has the look and feel of Starcraft II's GUI. One of the highlights of this is that you no longer need to click multiple times on parameter links to get to the bottom of the parameter tree. All parameters are now individually clickable.</p>
+                    <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>"StarCraft II"-inspired GUI:</h2>
+                        <p>The GUI has been re-imagined and has the look and feel of Starcraft II's GUI. One of the great things about this is you no longer need to click multiple times on parameter links to get to the bottom of the parameter tree. All parameters are now individually clickable.</p>
                     </div>
-                    <div className="column-image">
+                    <div className="column2">
                         <ImageComponent img={gifParameters} />
                     </div>
                 </div>
                 <hr className="solid"></hr>
 
                 <div className="row">
-                    <div className="column">
-                        <h2>Improved GUI to custom script conversion:</h2>
+                    <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>2D Arrays:</h2>
+                        <p>The GUI supports 2D arrays.</p>
+                    </div>
+                    <div className="column2">
+                        <ImageComponent img={pngArray2D} />
+                    </div>
+                </div>
+                <hr className="solid"></hr>
+
+                <div className="row">
+                    <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>Improved GUI to custom script conversion:</h2>
                         <p>You can convert a GUI trigger to custom script, but also convert it back to it's original GUI triggers if you regret it. Additionally, GUI to script conversion is also available for Lua mode.</p>
                     </div>
-                    <div className="column-image">
+                    <div className="column2">
                         <ImageComponent img={gifGUIConvert} />
                     </div>
                 </div>
                 <hr className="solid"></hr>
+
                 <p />
-                <p />
-                These are the major highlights of the editor in its current state. More features are planned:
-                <ol>
-                    <li>Trigger template/library importer.</li>
-                    <li>Keybinding menu.</li>
-                    <li>Action- and condition definitions: Define your own re-usable actions and conditions.</li>
-                    <li>More GUI natives: GetLocalPlayer, RemoveLocation, GetEventDamage, BlzCreateFrame and more.</li>
-                    <li>Local variables.</li>
-                    <li>Editor color themes.</li>
-                    <li>and more...</li>
-                </ol>
-                <hr className="solid"></hr>
-                <p />
-                <p />
-                
-            </header>
+                <div className="App-home">
+                    <h1>Planned features</h1>
+                    More features are planned.
+                    <p />
+                </div>
+                    <ol>
+                        <li>Trigger template/library importer.</li>
+                        <li>Keybinding menu.</li>
+                        <li>Action- and condition definitions: Define your own re-usable actions and conditions.</li>
+                        <li>More GUI natives: GetLocalPlayer, RemoveLocation, GetEventDamage, BlzCreateFrame and more.</li>
+                        <li>Local variables.</li>
+                        <li>Editor color themes.</li>
+                        <li>and more...</li>
+                    </ol>
+
+            </main>
+
         </div>
     )
 }

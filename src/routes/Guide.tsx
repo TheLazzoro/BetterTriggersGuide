@@ -1,18 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
+import pngSaveAs from "../images/pngSaveAs.png"
 
 export const Guide = () => {
     return (
         <div className="App">
             <header className="App-header App-guide">
+                <div style={{ maxWidth: "900px" }}>
 
                 <h1>Guide</h1>
                 <h2 className='requirements'>Requirements</h2>
                 <ol>
                     <li>Windows 10 or greater</li>
-                    <li><a className='default-li' href='https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-5.0.17-windows-x64-installer' target="_blank">.NET 5.0 Runtime x64</a></li>
+                    <li><a className='default-li' style={{ padding: "0px" }} href='https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-5.0.17-windows-x64-installer' target="_blank">.NET 5.0 Runtime x64</a></li>
                     <li>Warcraft III 1.32.0 or greater</li>
+                    <li>Your map saved in folder mode</li>
                 </ol>
                 <p></p>
                 <h2>Installation</h2>
@@ -37,14 +40,22 @@ export const Guide = () => {
 
                 <h2>Port existing triggers</h2>
                 <p>
-                    If you instead wish to port existing triggers from a project select Tools -> Trigger Converter
+                    <ul style={{ background: "transparent" }}>
+                        <li>If you instead wish to port existing triggers from a project select Tools -> Trigger Converter</li>
+                        <li>Make sure to save your map in folder mode if you haven't:</li>
+                    </ul>
+                    <img
+                        className="image"
+                        src={pngSaveAs}
+                        alt="no image"
+                    />
 
 
-                    <p/>
+                    <p />
                     NB: If the map you're porting contains variables with upper-/lower case variations of the same name e.g. "myVar" and "MyVar"
                     the Trigger Converter will rename the latter ones. This is because by default the filesystem isn't case sensitive and conflicts would occur.
                     <p>
-                        As a result, you may experience compile errors.
+                        As a result, you may experience compile errors after porting.
                     </p>
                 </p>
                 <h2>Remarks</h2>
@@ -57,6 +68,8 @@ export const Guide = () => {
                         They have no ID so it's only possible to track them via name.</li>
                     <li>Renaming an object editor ID will reset all its references in Better Triggers.</li>
                 </ol>
+                </div>
+
             </header>
         </div>
     )

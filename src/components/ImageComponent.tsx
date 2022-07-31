@@ -5,13 +5,12 @@ export const ImageComponent: FC<{img: string}> = ({ img }) => {
 
     const handleShowDialog = () => {
         setIsOpen(!isOpen);
-        console.log("cliked");
     };
 
     return (
         <div>
             <img
-                className="column-image"
+                style={{ width: "300px", float: "right" }}
                 src={img}
                 onClick={handleShowDialog}
                 alt="no image"
