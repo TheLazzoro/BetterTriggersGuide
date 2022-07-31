@@ -36,7 +36,6 @@ export const Home = () => {
                     However, it is possible to port existing triggers to this editor.
                 </p>
                 <p>
-                    At the moment the editor only supports editing maps made in patch 1.32.
                 </p>
 
                 <hr className="solid"></hr>
@@ -48,7 +47,12 @@ export const Home = () => {
                 <div className="row">
                     <div className="column">
                         <h2>Source files outside the World Editor:</h2>
-                        <p>As part of the reworked format all triggers, scripts, variables and categories are represented as individual files and folders in your filesystem.</p>
+                        <p>
+                            As part of the reworked format all triggers, scripts, variables and categories are no longer saved with your map, but are represented as individual files and folders in your filesystem.
+                        </p>
+                        <p style={{ fontStyle: "italic" }}>
+                            *This change required the removal of comments in the "trigger explorer" because the World Editor allows comments with identical names; something a filesystem does not.
+                        </p>
                     </div>
                     <div className="column-image">
                         <ImageComponent img={gifFileSystem} />
@@ -112,8 +116,8 @@ export const Home = () => {
                     </div>
                 </div>
                 <hr className="solid"></hr>
-                <p/>
-                <p/>
+                <p />
+                <p />
                 These are the major highlights of the editor in its current state. More features are planned:
                 <ol>
                     <li>Trigger template/library importer.</li>
@@ -125,17 +129,9 @@ export const Home = () => {
                     <li>and more...</li>
                 </ol>
                 <hr className="solid"></hr>
-                <p/>
-                <p/>
-                If this sounds great to you, be aware that working with an external tool
-                like this comes with its set of drawbacks dictated by the limitations of working outside the boundaries of the World Editor:
-                <ol>
-                    <li>There are no warnings when deleting anything inside the World Editor. The World Editor does not know what exists outside of it.
-                        Better Triggers only scans for changes when you save your map. However, it will notify you with a list of changed triggers.</li>
-                    <li>Renaming regions, cameras and sounds will reset all their references in Better Triggers.
-                        They have no ID so it's only possible to track them via name.</li>
-                    <li>Renaming an object editor ID will reset all its references in Better Triggers.</li>
-                </ol>
+                <p />
+                <p />
+                
             </header>
         </div>
     )

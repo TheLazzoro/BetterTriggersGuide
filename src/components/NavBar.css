@@ -1,3 +1,11 @@
+nav {
+	position: -webkit-sticky;
+	position: fixed;
+	background-color: #fff;
+	box-shadow: 0 0.125rem 0.25rem 0 rgb(0 0 0 / 11%);
+  width:  100%;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -25,9 +33,7 @@ li a {
   background-color: #444;
 }
 
-.default-li {
-  text-decoration: none;
-}
+
 
 .mainNav {
   color: #eee;

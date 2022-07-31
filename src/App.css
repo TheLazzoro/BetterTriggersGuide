@@ -1,3 +1,7 @@
+.App {
+  padding-top: 55px; /* Needed because of the navbar, which has 'snapped' out of the page */
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,9 +30,7 @@
 .App-guide {
   padding: 1px;
   padding-left: 50px;
-  color: white;
   min-height: 100vh;
-  background-color: #191919;
 }
 
 .App-link {
@@ -49,12 +51,16 @@ button {
 }
 
 hr.solid {
-  border-top: 1px solid #bbb;
+  border-color: #777;
   width: 100%;
 }
 
 h2 {
   color: #69c;
+}
+
+h3 {
+  color: #77a;
 }
 
 .column {
@@ -88,4 +94,22 @@ dialog {
 .dialog:hover {
   cursor: -webkit-zoom-out;
   cursor: zoom-out;
+}
+
+
+.default-li {
+  text-decoration: none;
+  color: #66f;
+}
+
+.toc-list, .toc-list ol {
+  list-style-type: none;
+}
+
+.toc-list {
+  padding: 0;
+}
+
+.toc-list ol {
+  padding-inline-start: 2ch;
 }
