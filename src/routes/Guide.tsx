@@ -23,7 +23,7 @@ export const Guide = () => {
                     <li>Download and extract the tool anywhere in your filesystem.</li>
                     <li>Run 'Better Triggers.exe' to launch to program.</li>
                     <li>When launching for the first time it will ask you to locate your Warcraft III installation directory.  Example: 'C:\User\Program Files\Warcraft III'.</li>
-                    You're now set and ready!
+                    You're now ready and set!
                 </ol>
                 <h2>Create a project</h2>
                 Creating a project generates a folder with a project file and three subfolders:
@@ -36,12 +36,12 @@ export const Guide = () => {
                 </ul>
 
                 <p />
-                To create a project select File -> New Project
+                To create a project select File -&gt; New Project
 
                 <h2>Port existing triggers</h2>
                 <p>
                     <ul style={{ background: "transparent" }}>
-                        <li>If you instead wish to port existing triggers from a project select Tools -> Trigger Converter</li>
+                        <li>If you instead wish to port existing triggers from a project select Tools &gt; Trigger Converter</li>
                         <li>Make sure to save your map in folder mode if you haven't:</li>
                     </ul>
                     <img
@@ -59,7 +59,7 @@ export const Guide = () => {
                     </p>
                 </p>
                 <h2>Remarks</h2>
-                Working with an external tool like this comes with its set of drawbacks dictated by the limitations of working outside the boundaries of the World Editor:
+                Working with an external tool like this comes with its set of limitations by working outside the boundaries of the World Editor:
                 <ol>
                     <li>Because Better Triggers overwrites the 'war3map.j' file in your map you are required to test your map through it, and not through the World Editor.</li>
                     <li>There are no warnings when deleting anything inside the World Editor. The World Editor does not know what exists outside of it.

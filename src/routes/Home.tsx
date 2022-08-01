@@ -142,7 +142,7 @@ export const Home = () => {
                         <li>Trigger template/library importer.</li>
                         <li>Keybinding menu.</li>
                         <li>Action- and condition definitions: Define your own re-usable actions and conditions.</li>
-                        <li>More GUI natives: GetLocalPlayer, RemoveLocation, GetEventDamage, BlzCreateFrame and more.</li>
+                        <li>More GUI natives</li>
                         <li>Local variables.</li>
                         <li>Editor color themes.</li>
                         <li>and more...</li>
