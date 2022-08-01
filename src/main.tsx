@@ -12,9 +12,9 @@ ReactDOM.render(
     <BrowserRouter>
       <TopBar />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Guide' element={<Guide />} />
-        <Route path='/Download' element={<Download />} />
+        <Route path='BetterTriggersGuide/' element={<Home />} />
+        <Route path='BetterTriggersGuide/Guide' element={<Guide />} />
+        <Route path='BetterTriggersGuide/Download' element={<Download />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
