@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import './index.css'
 import { Download } from './routes/Download'
 import TopBar from './components/NavBar'
@@ -9,14 +9,14 @@ import { Guide } from './routes/Guide'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <TopBar />
       <Routes>
-        <Route path='BetterTriggersGuide/' element={<Home />} />
-        <Route path='BetterTriggersGuide/Guide' element={<Guide />} />
-        <Route path='BetterTriggersGuide/Download' element={<Download />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/Guide' element={<Guide />} />
+        <Route path='/Download' element={<Download />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 )

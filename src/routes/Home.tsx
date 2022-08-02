@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../App.css'
 import { ImageComponent } from '../components/ImageComponent'
+import pngWorldEdit from "../images/Warcraft_III_World_Editor.png"
 import pngBT from "../images/BT.png"
 import gifFileSystem from "../images/FileSystem.gif"
 import pngDS from "../images/DS.png"
@@ -10,12 +11,18 @@ import gifParameters from "../images/TriggerParameters.gif"
 import gifGUIConvert from "../images/GUI2CustomScript.gif"
 import pngArray2D from "../images/Array2D.png"
 
+
 export const Home = () => {
+
     return (
         <div className="App">
             <header className="App-header App-home">
 
+                <p />
+                <p />
+                <img src={pngWorldEdit} alt="NoImg" />
                 <h1>Better Triggers</h1>
+
                 <h2 style={{ paddingTop: "0px" }}><a style={{ color: "#ddd" }}>A custom trigger editor for </a><a style={{ color: "#f90" }}>Warcraft III: Reforged</a></h2>
                 <p />
                 <div style={{ boxShadow: "0px 0px 8px #ffffff", WebkitBoxShadow: "0px 0px 15px #f90" }}>
@@ -30,7 +37,7 @@ export const Home = () => {
                 <p>
                     Unlike plugins like Jass NewGen Pack 2 (JNGP), TESH and similar, this trigger editor is completely separate
                     and works <a style={{ fontStyle: "italic" }}>outside</a> the World Editor.
-                    It expands with new features and improves the user experience for both GUI users and scripters.
+                    It expands with new features and aims to improve the user experience for both GUI users and scripters.
                     To achieve this the save format had to be reworked,
                     which also means this editor
                     <a style={{ fontWeight: "bold", textDecoration: "underline" }}> cannot be interchangeably used with the World Editor's trigger editor</a>.
@@ -52,10 +59,12 @@ export const Home = () => {
                     <div className="column1">
                         <h2 style={{ paddingTop: "0px" }}>Source files outside the World Editor:</h2>
                         <p>
-                            As part of the reworked format all triggers, scripts, variables and categories are no longer saved with your map, but are represented as individual files and folders in your filesystem.
+                            As part of the reworked format all triggers, scripts, variables and categories are no longer saved with your map,
+                            but are represented as individual files and folders in your filesystem in a project directory.
                         </p>
                         <p style={{ fontStyle: "italic" }}>
-                            *This change required the removal of comments in the "trigger explorer" because the World Editor allows comments with identical names; something a filesystem does not.
+                            *This change required the removal of comments in the "trigger explorer"
+                            because the World Editor allows comments with identical names; something a filesystem does not.
                         </p>
                     </div>
                     <div className="column2">
@@ -138,15 +147,15 @@ export const Home = () => {
                     More features are planned.
                     <p />
                 </div>
-                    <ol>
-                        <li>Trigger template/library importer.</li>
-                        <li>Keybinding menu.</li>
-                        <li>Action- and condition definitions: Define your own re-usable actions and conditions.</li>
-                        <li>More GUI natives</li>
-                        <li>Local variables.</li>
-                        <li>Editor color themes.</li>
-                        <li>and more...</li>
-                    </ol>
+                <ol>
+                    <li>Trigger template/library importer.</li>
+                    <li>Keybinding menu.</li>
+                    <li>Action- and condition definitions: Define your own re-usable actions and conditions.</li>
+                    <li>More GUI natives</li>
+                    <li>Local variables.</li>
+                    <li>Editor color themes.</li>
+                    <li>and more...</li>
+                </ol>
 
             </main>
 

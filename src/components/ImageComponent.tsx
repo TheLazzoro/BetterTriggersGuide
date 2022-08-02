@@ -1,6 +1,7 @@
+import { Box, Button, Modal, Typography } from "@mui/material";
 import React, { FC, useState } from "react";
 
-export const ImageComponent: FC<{img: string}> = ({ img }) => {
+export const ImageComponent: FC<{ img: string }> = ({ img }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleShowDialog = () => {
@@ -9,27 +10,31 @@ export const ImageComponent: FC<{img: string}> = ({ img }) => {
 
     return (
         <div>
+            <Modal sx= {{ display: "flex", justifyContent: "center", alignItems: "center" }}
+                open={isOpen}
+                onClose={handleShowDialog}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={{ outlineWidth: "0px" }}>
+                    <img
+                        className="image"
+                        src={img}
+                        onClick={handleShowDialog}
+                        alt="no image"
+
+                        style={{ display: "flex" }}
+                    />
+                </Box>
+            </Modal>
+
+
             <img
                 style={{ width: "300px", float: "right" }}
                 src={img}
                 onClick={handleShowDialog}
                 alt="no image"
             />
-            {isOpen && (
-                <dialog
-                    className="dialog"
-                    style={{ position: "absolute" }}
-                    open
-                    onClick={handleShowDialog}
-                >
-                    <img
-                        className="image"
-                        src={img}
-                        onClick={handleShowDialog}
-                        alt="no image"
-                    />
-                </dialog>
-            )}
         </div>
     )
 }
