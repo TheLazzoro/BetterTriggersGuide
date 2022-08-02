@@ -38,17 +38,17 @@ export const Home = () => {
                     Unlike plugins like Jass NewGen Pack 2 (JNGP), TESH and similar, this trigger editor is completely separate
                     and works <a style={{ fontStyle: "italic" }}>outside</a> the World Editor.
                     It expands with new features and aims to improve the user experience for both GUI users and scripters.
-                    To achieve this the save format had to be reworked,
-                    which also means this editor
-                    <a style={{ fontWeight: "bold", textDecoration: "underline" }}> cannot be interchangeably used with the World Editor's trigger editor</a>.
-                    However, it is possible to port existing triggers to this editor.
+                    To support the new features this editor does not bundle trigger data (.wtg) with your map, but saves the data in a project folder in your filesystem.
+                    This also means
+                    you <a style={{ fontWeight: "bold", textDecoration: "underline" }}>cannot swap back and forth between this editor and the World Editor's trigger editor</a>.
+                    Although, it is possible to port existing triggers from a map to this editor with the built-in 'Trigger Converter' tool.
                 </p>
                 <p>
                 </p>
 
                 <hr className="solid"></hr>
                 <p />
-                <h1>Main Features:</h1>
+                <h1>Feature Highlights:</h1>
                 <p />
                 <p />
 
@@ -60,7 +60,7 @@ export const Home = () => {
                         <h2 style={{ paddingTop: "0px" }}>Source files outside the World Editor:</h2>
                         <p>
                             As part of the reworked format all triggers, scripts, variables and categories are no longer saved with your map,
-                            but are represented as individual files and folders in your filesystem in a project directory.
+                            but are now located in a project directory as individual files and folders.
                         </p>
                         <p style={{ fontStyle: "italic" }}>
                             *This change required the removal of comments in the "trigger explorer"
@@ -144,7 +144,7 @@ export const Home = () => {
                 <p />
                 <div className="App-home">
                     <h1>Planned features</h1>
-                    More features are planned.
+                    More features are planned down the road.
                     <p />
                 </div>
                 <ol>

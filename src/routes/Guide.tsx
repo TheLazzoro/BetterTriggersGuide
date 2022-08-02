@@ -12,8 +12,8 @@ export const Guide = () => {
                 <h1>Guide</h1>
                 <h2 className='requirements'>Requirements</h2>
                 <ol>
-                    <li>Windows 10 or greater</li>
-                    <li><a className='default-li' style={{ padding: "0px" }} href='https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-5.0.17-windows-x64-installer' target="_blank">.NET 5.0 Runtime x64</a></li>
+                    <li>Windows 7 or greater</li>
+                    <li><a className='default-li' style={{ padding: "0px" }} href='https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-5.0.17-windows-x64-installer' target="_blank">.NET 5.0 Desktop Runtime x64</a></li>
                     <li>Warcraft III 1.32.0 or greater</li>
                     <li>Your map saved in folder mode</li>
                 </ol>
@@ -21,7 +21,7 @@ export const Guide = () => {
                 <h2>Installation</h2>
                 <ol>
                     <li>Download and extract the tool anywhere in your filesystem.</li>
-                    <li>Run 'Better Triggers.exe' to launch to program.</li>
+                    <li>Run 'Better Triggers.exe' to launch the program.</li>
                     <li>When launching for the first time it will ask you to locate your Warcraft III installation directory.  Example: 'C:\User\Program Files\Warcraft III'.</li>
                     You're now ready and set!
                 </ol>
@@ -63,7 +63,7 @@ export const Guide = () => {
                 <ol>
                     <li>Because Better Triggers overwrites the 'war3map.j' file in your map you are required to test your map through it, and not through the World Editor.</li>
                     <li>There are no warnings when deleting anything inside the World Editor. The World Editor does not know what exists outside of it.
-                        Better Triggers only scans for changes when you save your map. However, it will notify you with a list of changed triggers.</li>
+                        Better Triggers only scans for changes when you save your map, but it will notify you with a list of changed triggers.</li>
                     <li>Renaming regions, cameras and sounds will reset all their references in Better Triggers.
                         They have no ID so it's only possible to track them via name.</li>
                     <li>Renaming an object editor ID will reset all its references in Better Triggers.</li>

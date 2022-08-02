@@ -13,10 +13,10 @@ export const Download = () => {
                 <p/>
                 <div className="row" >
                     <div className="column">
-                        <ImageLink img={pngHive} link={"https://www.hiveworkshop.com/"} />
+                        <ImageLink img={pngHive} link={"https://www.hiveworkshop.com/threads/better-triggers.341002/"} />
                     </div>
                     <div className="column-image">
-                        <ImageLink img={pngGitHub} link={"https://github.com/TheLazzoro/BetterTriggers"} />
+                        <ImageLink img={pngGitHub} link={"https://github.com/TheLazzoro/BetterTriggers/releases"} />
                     </div>
                 </div>
             </header>
