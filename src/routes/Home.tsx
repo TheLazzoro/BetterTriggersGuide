@@ -123,6 +123,8 @@ export const Home = () => {
                     <div className="column1">
                         <h2 style={{ paddingTop: "0px" }}>Local Variables in GUI:</h2>
                         <p>The GUI supports local variables.</p>
+                        <p style={{ fontStyle: "italic" }}>*FYI local variables are implemented using global variables,
+                        and their values are set back to their initial value every time the trigger runs.</p>
                     </div>
                     <div className="column2">
                         <ImageComponent img={pngLocalVariables} />
