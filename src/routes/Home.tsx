@@ -10,6 +10,7 @@ import pngSyntax from "../images/syntax.png"
 import gifParameters from "../images/TriggerParameters.gif"
 import gifGUIConvert from "../images/GUI2CustomScript.gif"
 import pngArray2D from "../images/Array2D.png"
+import pngLocalVariables from "../images/LocalVariables.png"
 
 
 export const Home = () => {
@@ -39,8 +40,7 @@ export const Home = () => {
                     and works <a style={{ fontStyle: "italic" }}>outside</a> the World Editor.
                     It expands with new features and aims to improve the user experience for both GUI users and scripters.
                     To support the new features this editor does not bundle trigger data (.wtg) with your map, but saves the data in a project folder in your filesystem.
-                    This also means
-                    you <a style={{ fontWeight: "bold", textDecoration: "underline" }}>cannot swap back and forth between this editor and the World Editor's trigger editor</a>.
+                    This also means you cannot swap back and forth between this editor and the World Editor's trigger editor.
                     Although, it is possible to port existing triggers from a map to this editor with the built-in 'Trigger Converter' tool.
                 </p>
                 <p>
@@ -57,7 +57,7 @@ export const Home = () => {
             <main>
                 <div className="row">
                     <div className="column1">
-                        <h2 style={{ paddingTop: "0px" }}>Source files outside the World Editor:</h2>
+                        <h2 style={{ paddingTop: "0px" }}>Source files outside your map:</h2>
                         <p>
                             As part of the reworked format all triggers, scripts, variables and categories are no longer saved with your map,
                             but are now located in a project directory as individual files and folders.
@@ -121,6 +121,17 @@ export const Home = () => {
 
                 <div className="row">
                     <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>Local Variables in GUI:</h2>
+                        <p>The GUI supports local variables.</p>
+                    </div>
+                    <div className="column2">
+                        <ImageComponent img={pngLocalVariables} />
+                    </div>
+                </div>
+                <hr className="solid"></hr>
+
+                <div className="row">
+                    <div className="column1">
                         <h2 style={{ paddingTop: "0px" }}>2D Arrays:</h2>
                         <p>The GUI supports 2D arrays.</p>
                     </div>
@@ -149,10 +160,10 @@ export const Home = () => {
                 </div>
                 <ol>
                     <li>Trigger template/library importer.</li>
-                    <li>Keybinding menu.</li>
+                    <li style={{ color: "#5c5" }}>Keybinding menu.</li>
                     <li>Action- and condition definitions: Define your own re-usable actions and conditions.</li>
-                    <li>More GUI natives</li>
-                    <li>Local variables.</li>
+                    <li>More natives in GUI.</li>
+                    <li style={{ color: "#5c5" }}>Local variables.</li>
                     <li>Editor color themes.</li>
                     <li>and more...</li>
                 </ol>
