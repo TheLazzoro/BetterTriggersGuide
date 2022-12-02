@@ -123,8 +123,10 @@ export const Home = () => {
                     <div className="column1">
                         <h2 style={{ paddingTop: "0px" }}>Local Variables in GUI:</h2>
                         <p>The GUI supports local variables.</p>
-                        <p style={{ fontStyle: "italic" }}>*FYI local variables are implemented using global variables,
-                        and their values are set back to their initial value every time the trigger runs.</p>
+                        <p>Local variables can only be used in actions, hence why they are placed beneath conditions.</p>
+                        <p>Keep in mind that locals like unit groups and player groups are created every time the trigger runs,
+                            so those are very prone to leaks.
+                        </p>
                     </div>
                     <div className="column2">
                         <ImageComponent img={pngLocalVariables} />
@@ -135,7 +137,7 @@ export const Home = () => {
                 <div className="row">
                     <div className="column1">
                         <h2 style={{ paddingTop: "0px" }}>2D Arrays:</h2>
-                        <p>The GUI supports 2D arrays.</p>
+                        <p>The GUI supports 2D arrays for global variables.</p>
                     </div>
                     <div className="column2">
                         <ImageComponent img={pngArray2D} />
