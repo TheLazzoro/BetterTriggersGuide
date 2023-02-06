@@ -3,15 +3,25 @@
   width: 220px;
   min-width: 220px;
   padding: 16px;
+  margin-left: 50px;
   align-self: flex-start;
   position: -webkit-sticky;
-  position: sticky;
-  top: 72px;
+  position: fixed;
+  top: 12px;
     max-height: calc(100vh - 40px);
     overflow: auto;
   margin-top: 150px;
+  background-color: #444;
 }
 
 .tocnav ul li {
-  margin-bottom: 15px;
+  margin-bottom: 1px;
+}
+
+.tocnav a {
+    color: #ccc;
+}
+
+.tocnav a:hover {
+    color: #69c;
 }
