@@ -1,9 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import './NavBar.css'
 
-const NavBar: FC = (props) => {
+const NavBar = (props) => {
 
   return (
     <div>

@@ -1,7 +1,7 @@
 import { Box, Button, Modal, Typography } from "@mui/material";
 import React, { FC, useState } from "react";
 
-export const ImageComponent: FC<{ img: string }> = ({ img }) => {
+export const ImageComponent = ({ img }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleShowDialog = () => {

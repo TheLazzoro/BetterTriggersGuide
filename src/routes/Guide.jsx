@@ -1,16 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
 import pngSaveAs from "../images/pngSaveAs.png"
+import { TableOfContents } from '../components/tableOfContents'
+
+const getNestedHeadings = (headingElements) => {
+    const nestedHeadings = [];
+  
+    headingElements.forEach((heading, index) => {
+      const { innerText: title, id } = heading;
+  
+      if (heading.nodeName === "H2") {
+        nestedHeadings.push({ id, title, items: [] });
+      } else if (heading.nodeName === "H3" && nestedHeadings.length > 0) {
+        nestedHeadings[nestedHeadings.length - 1].items.push({
+          id,
+          title,
+        });
+      }
+    });
+  
+    return nestedHeadings;
+  };
 
 export const Guide = () => {
+
+    
+
+    const useHeadingsData = () => {
+        const [nestedHeadings, setNestedHeadings] = useState([]);
+      
+        useEffect(() => {
+          const headingElements = Array.from(
+            document.querySelectorAll("h2, h3")
+          );
+      
+          const newNestedHeadings = getNestedHeadings(headingElements);
+          setNestedHeadings(newNestedHeadings);
+        }, []);
+      
+        return { nestedHeadings };
+      };
+
     return (
         <div className="App">
             <header className="App-header App-guide">
+            <TableOfContents/>
                 <div style={{ maxWidth: "900px" }}>
 
                 <h1>Guide</h1>
-                <h2 className='requirements'>Requirements</h2>
+                <h2 id='requirements'>Requirements</h2>
                 <ol>
                     <li>Windows 7 or greater</li>
                     <li><a className='default-li' style={{ padding: "0px" }} href='https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-5.0.17-windows-x64-installer' target="_blank">.NET 5.0 Desktop Runtime x64</a></li>

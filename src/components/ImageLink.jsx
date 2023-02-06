@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-export const ImageLink: FC<{img: string, link: string}> = ({ img, link }) => {
+export const ImageLink = ({ img, link }) => {
     return (
         <div>
             <a href={link} target="_blank">
