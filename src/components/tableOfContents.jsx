@@ -16,24 +16,22 @@ const Headings = ({ headings }) => (
     {headings.map((heading) => (
       <li key={heading.id}>
         <a href={`#${heading.id}`}
-        onClick={(e) => {
-          e.preventDefault();
-          document.querySelector(`#${heading.id}`).scrollIntoView({
-            behavior: "smooth"
-          });
-        }}
+          onClick={(e) => {
+            e.preventDefault();
+            const element = document.querySelector(`#${heading.id}`)
+            ScrollIntoViewExt(element);
+          }}
         >{heading.title}</a>
         {heading.items.length > 0 && ( // render nested headings
           <ul>
             {heading.items.map((child) => (
               <li key={child.id}>
                 <a href={`#${child.id}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector(`#${child.id}`).scrollIntoView({
-                    behavior: "smooth"
-                  });
-                }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector(`#${child.id}`);
+                    ScrollIntoViewExt(element);
+                  }}
                 >{child.title}</a>
               </li>
             ))}
@@ -43,6 +41,17 @@ const Headings = ({ headings }) => (
     ))}
   </ul>
 );
+
+const ScrollIntoViewExt = (element) => {
+  var headerOffset = 45;
+  var elementPosition = element.getBoundingClientRect().top;
+  var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  });
+}
 
 const useHeadingsData = () => {
   const [nestedHeadings, setNestedHeadings] = useState([]);
