@@ -4,6 +4,7 @@ import '../App.css'
 import pngNewProject from "../images/NewProject.png"
 import pngLocalPlayer from "../images/LocalPlayer.png"
 import pngFrameEvent from "../images/FrameEvent.png"
+import pngFrameShowHide from "../images/FrameShowHide.png"
 import pngSaveAs from "../images/pngSaveAs.png"
 import { TableOfContents } from '../components/tableOfContents'
 
@@ -59,7 +60,7 @@ export const Guide = () => {
               <li>The 'dist' folder contains the final map when you click 'Export Map'.</li>
             </ul>
 
-            <h2 id='expanded-functionality'>GUI dos and don'ts</h2>
+            <h2 id='expanded-functionality'>Expanded GUI Tips</h2>
             <h3 id='gui-natives'>Local Player</h3>
             Better Triggers has implemented '<code>GetLocalPlayer</code>' in GUI.
             This should only be used in if-then-else actions like so:
@@ -71,7 +72,7 @@ export const Guide = () => {
             />
 
             <h3 id='frames'>Frames</h3>
-            Since Blizzard has not implemented a generic event for frames Better Triggers has done a workaround to bring
+            Since Blizzard has not implemented a generic event for frames, Better Triggers has done a workaround to bring
             frame natives to GUI triggers. The generic frame event actually uses '<code>TriggerRegisterVariableEvent</code>' under the hood,
             but is made more user-friendly for GUI users. There are a few points to make about this:<br/><br/>
 
@@ -88,6 +89,22 @@ export const Guide = () => {
             <li>'<code>BlzGetTriggerFrameEvent()</code>' -&gt; '<code>GetTriggerFrameEventBT()</code>'</li>
             <li>'<code>BlzGetTriggerFrameValue()</code>' -&gt; '<code>GetTriggerFrameValueBT()</code>'</li>
             <li>'<code>BlzGetTriggerFrameText()</code>' -&gt; '<code>GetTriggerFrameTextBT()</code>'</li>
+
+            <br/>
+            <br/>
+
+            Other than that you use the frame natives in GUI just like they've been used in scripting. <br/>
+            E.g. you show/hide frames for individual players by putting it inside a 'Local Player' if-statement:<br/><br/>
+
+            <img
+            className="image"
+            src={pngFrameShowHide}
+            alt="no image"
+            />
+            <br/>
+            For a more in-depth guide on how to use frames refer to <a className='default-li' style={{ padding: "0px" }} href='https://www.hiveworkshop.com/pastebin/e23909d8468ff4942ccea268fbbcafd1.20598' target="_blank">Tasyen's tutorial</a>.
+            <br/>
+            Bonus link: <a className='default-li' style={{ padding: "0px" }} href='https://www.hiveworkshop.com/threads/ui-list-default-mainframes.317884/' target="_blank">Types of Frames</a>
 
             </p>
             <h2 id='remarks'>Remarks</h2>

@@ -11,6 +11,8 @@ import gifParameters from "../images/TriggerParameters.gif"
 import gifGUIConvert from "../images/GUI2CustomScript.gif"
 import pngArray2D from "../images/Array2D.png"
 import pngLocalVariables from "../images/LocalVariables.png"
+import pngFramehandles from "../images/Framehandles.png"
+
 
 
 export const Home = () => {
@@ -147,6 +149,17 @@ export const Home = () => {
 
                 <div className="row">
                     <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>Frames in GUI:</h2>
+                        <p>You can create custom UI with Frames in GUI.</p>
+                    </div>
+                    <div className="column2">
+                        <ImageComponent img={pngFramehandles} />
+                    </div>
+                </div>
+                <hr className="solid"></hr>
+
+                <div className="row">
+                    <div className="column1">
                         <h2 style={{ paddingTop: "0px" }}>Improved GUI to custom script conversion:</h2>
                         <p>You can convert a GUI trigger to custom script, but also convert it back to it's original GUI triggers if you regret it. Additionally, GUI to script conversion is also available for Lua mode.</p>
                     </div>
@@ -166,7 +179,7 @@ export const Home = () => {
                     <li>Trigger template/library importer.</li>
                     <li style={{ color: "#5c5" }}>Keybinding menu.</li>
                     <li>Action- and condition definitions: Define your own re-usable actions and conditions.</li>
-                    <li>More natives in GUI.</li>
+                    <li style={{ color: "#5c5" }}>More natives in GUI.</li>
                     <li style={{ color: "#5c5" }}>Local variables.</li>
                     <li>Editor color themes.</li>
                     <li>and more...</li>

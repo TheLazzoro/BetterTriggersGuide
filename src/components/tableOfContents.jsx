@@ -43,7 +43,7 @@ const Headings = ({ headings }) => (
 );
 
 const ScrollIntoViewExt = (element) => {
-  var headerOffset = 45;
+  var headerOffset = 60;
   var elementPosition = element.getBoundingClientRect().top;
   var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
