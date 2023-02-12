@@ -5,6 +5,8 @@ import pngNewProject from "../images/NewProject.png"
 import pngLocalPlayer from "../images/LocalPlayer.png"
 import pngFrameEvent from "../images/FrameEvent.png"
 import pngFrameShowHide from "../images/FrameShowHide.png"
+import pngTriggerExplorer from "../images/TriggerExplorer.png"
+import gifLiveScript from "../images/LiveScript.gif"
 import pngSaveAs from "../images/pngSaveAs.png"
 import { TableOfContents } from '../components/tableOfContents'
 
@@ -60,6 +62,41 @@ export const Guide = () => {
               <li>The 'dist' folder contains the final map when you click 'Export Map'.</li>
             </ul>
 
+            <h2 id='trigger-explorer'>Trigger Explorer</h2>
+            The trigger explorer in this trigger editor works a lot different than the one in the World Editor,
+            in the way that it's actually a live view of your filesystem from your <code>src</code> folder. <br/><br/>
+            <img
+            className="image"
+            src={pngTriggerExplorer}
+            alt="no image"
+            />
+            <br/>
+            <br/>
+            <b>NOTE:</b><br/>
+            While you can certainly copy-paste files and entire folders of content in Windows Explorer it is
+            recommended you do these operations through the trigger explorer in Better Triggers. The generated script will
+            create triggers and variables with names based on the name of your files, and if you have two variables
+            or triggers with the same name it will cause script errors. This will not happen when copy-pasting through
+            Better Triggers, since the editor will properly rename your files.
+            <br/>
+            However, script files (<code>.j</code> and <code>.lua</code>) are not affected by this.
+            <br/>
+            <br/>
+            The main benefit of this being a live filesystem view is that you can work directly in your script files
+            without the need to copy-paste the contents from somewhere else (like we're used to in the World Editor):
+            <br/>
+            <br/>
+            <img
+            className="image"
+            src={gifLiveScript}
+            alt="no image"
+            />
+            <br/>
+            <br/>
+            Changes to your scripts are automatically picked up by the editor. This is exclusive to <code>.j</code> and <code>.lua</code> files.
+            Content changes to your trigger and variable files will not be picked up by the editor, and it's generally not recommended
+            to edit those.
+
             <h2 id='expanded-functionality'>Expanded GUI Tips</h2>
             <h3 id='gui-natives'>Local Player</h3>
             Better Triggers has implemented '<code>GetLocalPlayer</code>' in GUI.
@@ -93,8 +130,8 @@ export const Guide = () => {
             <br/>
             <br/>
 
-            Other than that you use the frame natives in GUI just like they've been used in scripting. <br/>
-            E.g. you show/hide frames for individual players by putting it inside a 'Local Player' if-statement:<br/><br/>
+            Other than that you use the frame natives in GUI just like you would in scripting. <br/>
+            E.g. you show/hide frames for individual players showing/hiding them inside a 'Local Player' if-statement:<br/><br/>
 
             <img
             className="image"
