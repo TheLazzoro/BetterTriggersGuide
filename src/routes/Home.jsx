@@ -6,12 +6,13 @@ import pngBT from "../images/BT.png"
 import gifFileSystem from "../images/FileSystem.gif"
 import pngDS from "../images/DS.png"
 import gifLiveScript from "../images/LiveScript.gif"
-import pngSyntax from "../images/syntax.png"
+import pngSyntax from "../images/code.gif"
 import gifParameters from "../images/TriggerParameters.gif"
 import gifGUIConvert from "../images/GUI2CustomScript.gif"
 import pngArray2D from "../images/Array2D.png"
 import pngLocalVariables from "../images/LocalVariables.png"
-import pngFramehandles from "../images/Framehandles.png"
+import pngFramehandles from "../images/Frames.gif"
+import gifThemes from "../images/themes.gif"
 
 
 
@@ -79,7 +80,7 @@ export const Home = () => {
                     <div className="column1">
                         <h2 style={{ paddingTop: "0px" }}>Convert an existing map's triggers:</h2>
                         <p>If you are already working on a Warcraft 3 map and wish to port your triggers to this editor, you can.
-                            The built-in trigger converter tool scans your map for triggers, variables, scripts etc. and converts them to source files readable by this editor.</p>
+                            When creating a new project you can choose convert an already existing map's triggers. The editor will scan your map for triggers, variables, scripts etc. and converts them to source files readable by this editor.</p>
                         <p style={{ fontStyle: "italic" }}>*The illustrated image shows a converted project of mine.</p>
                     </div>
                     <div className="column2">
@@ -101,8 +102,9 @@ export const Home = () => {
 
                 <div className="row">
                     <div className="column1">
-                        <h2 style={{ paddingTop: "0px" }}>Syntax Highlighting:</h2>
-                        <p>The built-in script editor has basic syntax highlighting for both Jass and Lua files, but that is pretty much the only extra feature. You are encouraged to use superior external text editors like VSCode. However, extra features for the built-in text editor in the future are not out of question.</p>
+                        <h2 style={{ paddingTop: "0px" }}>Upgraded Script Editor:</h2>
+                        <p>The built-in script editor has basic syntax highlighting and autocomplete for both Jass and Lua.<br/>
+                        However, You can edit your code in any external text editor, like VSCode.</p>
                     </div>
                     <div className="column2">
                         <ImageComponent img={pngSyntax} />
@@ -169,6 +171,17 @@ export const Home = () => {
                 </div>
                 <hr className="solid"></hr>
 
+                <div className="row">
+                    <div className="column1">
+                        <h2 style={{ paddingTop: "0px" }}>Color Themes:</h2>
+                        <p>Select between different editor color themes.</p>
+                    </div>
+                    <div className="column2">
+                        <ImageComponent img={gifThemes} />
+                    </div>
+                </div>
+                <hr className="solid"></hr>
+
                 <p />
                 <div className="App-home">
                     <h1>Planned features</h1>
@@ -181,7 +194,7 @@ export const Home = () => {
                     <li>Action- and condition definitions: Define your own re-usable actions and conditions.</li>
                     <li style={{ color: "#5c5" }}>More natives in GUI.</li>
                     <li style={{ color: "#5c5" }}>Local variables.</li>
-                    <li>Editor color themes.</li>
+                    <li style={{ color: "#5c5" }}>Editor color themes.</li>
                     <li>and more...</li>
                 </ol>
 

@@ -82,8 +82,8 @@ export const Guide = () => {
             However, script files (<code>.j</code> and <code>.lua</code>) are not affected by this.
             <br/>
             <br/>
-            The main benefit of this being a live filesystem view is that you can work directly in your script files
-            without the need to copy-paste the contents from somewhere else (like we're used to in the World Editor):
+            The main benefit of this being a live filesystem view is that you can work directly in an external text/code editor 
+            without the need to copy-paste the contents into the editor like we are used to in the World Editor:
             <br/>
             <br/>
             <img
@@ -93,9 +93,9 @@ export const Guide = () => {
             />
             <br/>
             <br/>
-            Changes to your scripts are automatically picked up by the editor. This is exclusive to <code>.j</code> and <code>.lua</code> files.
-            Content changes to your trigger and variable files will not be picked up by the editor, and it's generally not recommended
-            to edit those.
+            External changes to your scripts are automatically picked up by the editor. This is exclusive to <code>.j</code> and <code>.lua</code> files.
+            Content changes to your trigger and variable files will not be picked up by the editor, but it's generally not recommended
+            to edit those anyway.
 
             <h2 id='expanded-functionality'>Expanded GUI Tips</h2>
             <h3 id='gui-natives'>Local Player</h3>
