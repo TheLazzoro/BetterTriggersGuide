@@ -44,7 +44,7 @@ export const Home = () => {
                     It expands with new features and aims to improve the user experience for both GUI users and scripters.
                     To support the new features this editor does not bundle trigger data (.wtg) with your map, but saves the data in a project folder in your filesystem.
                     This also means you cannot swap back and forth between this editor and the World Editor's trigger editor.
-                    Although, it is possible to port existing triggers from a map to this editor with the built-in 'Trigger Converter' tool.
+                    Although, it is possible to port existing triggers from a map to this editor from the 'New Project' window.
                 </p>
                 <p>
                 </p>
@@ -92,7 +92,8 @@ export const Home = () => {
                 <div className="row">
                     <div className="column1">
                         <h2 style={{ paddingTop: "0px" }}>Script live update:</h2>
-                        <p>The editor automatically detects changes made to custom script files in your filesystem. This allows you to work directly in whatever text editor you want and removes the need to copy/paste from external source files into the editor.</p>
+                        <p>The editor automatically detects changes made to custom script files in your filesystem.
+                            This allows you to work directly in whatever text editor you want and removes the need to copy/paste from external source files into the editor.</p>
                     </div>
                     <div className="column2">
                         <ImageComponent img={gifLiveScript} />
@@ -103,8 +104,7 @@ export const Home = () => {
                 <div className="row">
                     <div className="column1">
                         <h2 style={{ paddingTop: "0px" }}>Upgraded Script Editor:</h2>
-                        <p>The built-in script editor has basic syntax highlighting and autocomplete for both Jass and Lua.<br/>
-                        However, You can edit your code in any external text editor, like VSCode.</p>
+                        <p>The built-in script editor has basic syntax highlighting and autocomplete for both Jass and Lua.</p>
                     </div>
                     <div className="column2">
                         <ImageComponent img={pngSyntax} />
@@ -182,12 +182,10 @@ export const Home = () => {
                 </div>
                 <hr className="solid"></hr>
 
+                <br />
+
+                <h1>Planned features</h1>
                 <p />
-                <div className="App-home">
-                    <h1>Planned features</h1>
-                    More features are planned down the road.
-                    <p />
-                </div>
                 <ol>
                     <li>Trigger template/library importer.</li>
                     <li style={{ color: "#5c5" }}>Keybinding menu.</li>

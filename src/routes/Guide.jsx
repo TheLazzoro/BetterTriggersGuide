@@ -25,7 +25,6 @@ export const Guide = () => {
               <li>Windows 7 or greater</li>
               <li><a className='default-li' style={{ padding: "0px" }} href='https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-5.0.17-windows-x64-installer' target="_blank">.NET 5.0 Desktop Runtime x64</a></li>
               <li>Warcraft III 1.32.0 or greater</li>
-              <li>Your map saved in folder mode</li>
             </ol>
             <p></p>
             <h2 id='installation'>Installation</h2>
