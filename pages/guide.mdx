@@ -1,0 +1,236 @@
+import pngNewProject from "../img/NewProject.png"
+import pngLocalPlayer from "../img/LocalPlayer.png"
+import pngFrameEvent from "../img/FrameEvent.png"
+import pngFrameShowHide from "../img/FrameShowHide.png"
+import pngTriggerExplorer from "../img/TriggerExplorer.png"
+import gifLiveScript from "../img/LiveScript.gif"
+import pngProjectFiles from "../img/ProjectFilesExample.PNG"
+
+import styles from '../components/counters.module.css'
+import { Callout } from 'nextra/components'
+import { Tabs } from 'nextra/components'
+
+# Guide
+
+## Requirements
+- Windows 7 or greater
+- <a className={styles.linkText} style={{ padding: "0px" }} href='https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.24-windows-x64-installer' target="_blank">.NET 6.0 Desktop Runtime x64</a>
+- Warcraft III 1.32.0 or greater
+
+## Installation
+- Download and extract the tool anywhere in your filesystem.
+- Run 'Better Triggers.exe' to launch the program.
+- When launching for the first time it will ask you to locate your Warcraft III installation directory.  Example: 'C:\User\Program Files\Warcraft III'.
+
+You're now ready and set!
+
+## Create a project
+To create a project select 'File -&gt; New Project' in the top menu.
+
+You have the option to create an empty project or copy all triggers from an existing map.
+Creating an empty map will generate a new map in the 'map' directory with empty triggers.
+
+When creating a project with existing triggers from a map the tool will extract all folders, triggers, variables, and scripts
+into the 'src' folder in your project. Comments in the Trigger Explorer menu are ignored.
+
+<Callout>
+  **NOTE:** If you're copying triggers from a map that contains variables with upper-/lower case variations of the same name
+e.g. "myVar" and "MyVar" the latter ones will be renamed.
+This is because the filesystem isn't case sensitive by default and conflicts would occur.
+
+As a result, you may experience compile errors after porting.
+</Callout>
+
+
+<br/>
+<br/>
+<img
+className="image"
+src={pngNewProject.src}
+alt="no image"
+/>
+
+<br/>
+
+Creating a new project generates a folder with a project file and three subfolders:
+<br/>
+
+<img
+className="image"
+src={pngProjectFiles.src}
+alt="no image"
+/>
+- The project file contains essential information about your project, and is the file you should point to when opening a project.
+- The 'map' folder is not required, but it is the default map location when creating a new project.
+- The 'src' folder contains all source files i.e. triggers, variables, scripts etc.
+- The 'dist' folder contains the final map when you click 'Export Map'.
+
+
+## Trigger Explorer
+The trigger explorer in this trigger editor works a lot different than the one in the World Editor,
+in the way that it's actually a live view of your filesystem from your <code>src</code> folder. <br/><br/>
+            
+<img
+className="image"
+src={pngTriggerExplorer.src}
+alt="no image"
+/>
+<br/>
+
+<Callout>
+**NOTE:** While you can certainly copy-paste files and entire folders of content in Windows Explorer, it is
+recommended you do these operations through the trigger explorer in Better Triggers. The generated script will
+create triggers and variables with names based on filenames, and if two variables
+or triggers have the same name it will cause script errors. This will not happen when copy-pasting through
+Better Triggers, since the editor will properly rename your files.
+
+However, script files (<code>.j</code> and <code>.lua</code>) are not affected by this.
+</Callout>
+
+
+The main benefit of this being a live filesystem view is that you can work directly in an external text/code editor 
+without the need to copy-paste the contents into the editor like we are used to in the World Editor:
+<br/>
+<img
+className="image"
+src={gifLiveScript.src}
+alt="no image"
+/>
+<br/>
+External changes to your scripts are automatically picked up by the editor. This is exclusive to <code>.j</code> and <code>.lua</code> files.
+Content changes to trigger and variable files will not be picked up by the editor, but it's generally not recommended
+to edit those anyway.
+
+
+## Expanded GUI Tips
+
+### Local Player
+Better Triggers has implemented '<code>GetLocalPlayer</code>' in GUI.
+This should only be used in if-then-else actions like so:
+<br/>
+<img
+className="image"
+src={pngLocalPlayer.src}
+alt="no image"
+/>
+It's generally not recommended to use '<code>Local Player</code>' if you're unfamiliar with it, as it's the number 1 cause of desyncs.
+However, it enables you to do a lot of things, like displaying UI elements (frames) on a per player basis.
+
+### Frames
+Since Blizzard has not implemented a generic event for frames, Better Triggers has done a workaround to bring
+frame natives to GUI triggers. The generic frame event actually uses '<code>TriggerRegisterVariableEvent</code>' under the hood,
+but is made more user-friendly for GUI users. There are a few points to make about this:
+
+When referring to the player that triggered the event you cannot use 'Triggering Player' or '<code>GetTriggerPlayer()</code>'.
+You must use 'Triggering Frame Player' or '<code>GetTriggerFramePlayerBT()</code>' as shown here:
+
+<br/>
+<img
+className="image"
+src={pngFrameEvent.src}
+alt="no image"
+/>
+            
+This is also the case for a number of other natives, though is mostly relevant for scripting:
+- '<code>GetTriggerFrame()</code>' -&gt; '<code>GetTriggerFrameBT()</code>'
+- '<code>BlzGetTriggerFrameEvent()</code>' -&gt; '<code>GetTriggerFrameEventBT()</code>'
+- '<code>BlzGetTriggerFrameValue()</code>' -&gt; '<code>GetTriggerFrameValueBT()</code>'
+- '<code>BlzGetTriggerFrameText()</code>' -&gt; '<code>GetTriggerFrameTextBT()</code>'
+
+
+Other than that you use the frame natives in GUI just like you would in scripting. <br/>
+E.g. you show/hide frames for individual players showing/hiding them inside a 'Local Player' if-statement:<br/><br/>
+
+
+<img
+className="image"
+src={pngFrameShowHide.src}
+alt="no image"
+/>
+
+The above GUI trigger generates the following script:
+
+<Tabs items={['JASS', 'Lua']}>
+  <Tabs.Tab>
+```js
+//****************************************************************************
+//*  Trigger Untitled_Trigger
+//****************************************************************************
+function If_Trig_Untitled_Trigger_0 takes nothing returns boolean
+	if (not(GetTriggerFramePlayerBT() == GetLocalPlayer())) then
+		return false
+	endif
+	return true
+endfunction
+
+function Trig_Untitled_Trigger_Conditions takes nothing returns boolean
+	if (not(GetTriggerFrameBT() == udg_frameButton)) then 
+		return false
+	endif
+	if (not(GetTriggerFramePlayerBT() == Player(0))) then 
+		return false
+	endif
+	return true
+endfunction
+
+function Trig_Untitled_Trigger_Actions takes nothing returns nothing
+	if (If_Trig_Untitled_Trigger_0()) then
+		call BlzFrameSetVisibleBT(false, GetTriggerFrameBT())
+	else
+	endif
+endfunction
+
+//****************************************************************************
+function InitTrig_Untitled_Trigger takes nothing returns nothing
+	set gg_trg_Untitled_Trigger = CreateTrigger()
+	call TriggerRegisterGenericFrameEventBT(gg_trg_Untitled_Trigger, 1.0, EQUAL, "bt_genericFrameEvent")
+	call TriggerAddCondition(gg_trg_Untitled_Trigger, Condition(function Trig_Untitled_Trigger_Conditions))
+	call TriggerAddAction(gg_trg_Untitled_Trigger, function Trig_Untitled_Trigger_Actions)
+endfunction
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```lua
+-----------------------------------------------------------------------------
+--  Trigger Untitled_Trigger
+-----------------------------------------------------------------------------
+function If_Trig_Untitled_Trigger_0()
+	if (not(GetTriggerFramePlayerBT() == GetLocalPlayer())) then
+		return false
+	end
+	return true
+end
+
+function Trig_Untitled_Trigger_Conditions()
+	if (not(GetTriggerFrameBT() == udg_frameButton)) then
+		return false
+	end
+	if (not(GetTriggerFramePlayerBT() == Player(0))) then
+		return false
+	end
+	return true
+end
+
+function Trig_Untitled_Trigger_Actions()
+	if(If_Trig_Untitled_Trigger_0()) then
+	 	BlzFrameSetVisibleBT(false,GetTriggerFrameBT())
+	else
+	end
+end
+
+-----------------------------------------------------------------------------
+function InitTrig_Untitled_Trigger ()
+	gg_trg_Untitled_Trigger = CreateTrigger()
+ 	TriggerRegisterGenericFrameEventBT(gg_trg_Untitled_Trigger, 1.0, EQUAL, "bt_genericFrameEvent") 
+	TriggerAddCondition(gg_trg_Untitled_Trigger, Condition( Trig_Untitled_Trigger_Conditions))
+	TriggerAddAction(gg_trg_Untitled_Trigger, Trig_Untitled_Trigger_Actions)
+end
+```
+</Tabs.Tab>
+</Tabs>
+
+
+<br/>
+For a more in-depth guide on how to use frames refer to <a className='default-li' style={{ padding: "0px" }} href='https://www.hiveworkshop.com/pastebin/e23909d8468ff4942ccea268fbbcafd1.20598' target="_blank">Tasyen's tutorial</a>: 
+<a className={styles.linkText} style={{ padding: "0px" }} href='https://www.hiveworkshop.com/threads/ui-list-default-mainframes.317884/' target="_blank">Types of Frames</a>
+

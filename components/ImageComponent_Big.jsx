@@ -1,7 +1,8 @@
 import { Box, Button, Modal, Typography } from "@mui/material";
 import React, { FC, useState } from "react";
+import styles from './counters.module.css'
 
-export const ImageComponent = ({ img }) => {
+export const ImageComponent_Big = ({ img }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleShowDialog = () => {
@@ -10,7 +11,7 @@ export const ImageComponent = ({ img }) => {
 
     return (
         <div>
-            <Modal sx= {{ display: "flex", justifyContent: "center", alignItems: "center" }}
+            <Modal sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
                 open={isOpen}
                 onClose={handleShowDialog}
                 aria-labelledby="modal-modal-title"
@@ -18,8 +19,8 @@ export const ImageComponent = ({ img }) => {
             >
                 <Box sx={{ outlineWidth: "0px" }}>
                     <img
-                        className="image"
-                        src={img}
+                        className={styles.expandedImage}
+                        src={img.src}
                         onClick={handleShowDialog}
                         alt="no image"
 
@@ -30,8 +31,8 @@ export const ImageComponent = ({ img }) => {
 
 
             <img
-                style={{ width: "300px", float: "right" }}
-                src={img}
+                className={styles.notYetExpandedImage}
+                src={img.src}
                 onClick={handleShowDialog}
                 alt="no image"
             />

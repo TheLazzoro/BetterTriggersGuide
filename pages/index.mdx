@@ -1,0 +1,250 @@
+import {ImageComponent} from '../components/ImageComponent'
+import {ImageComponent_Big} from '../components/ImageComponent_Big'
+import styles from "../components/counters.module.css"
+import pngBT from "../img/BT.png"
+import gifFileSystem from "../img/FileSystem.gif"
+import pngDS from "../img/DS.png"
+import gifLiveScript from "../img/LiveScript.gif"
+import pngSyntax from "../img/code.gif"
+import gifParameters from "../img/TriggerParameters.gif"
+import gifGUIConvert from "../img/GUI2CustomScript.gif"
+import pngArray2D from "../img/Array2D.png"
+import pngLocalVariables from "../img/LocalVariables.png"
+import pngFramehandles from "../img/Frames.gif"
+import gifThemes from "../img/themes.gif"
+
+# Better Triggers
+ 
+A custom trigger editor for <a style={{ color: "#f90" }}>**Warcraft III: Reforged**</a>
+<br/>
+<ImageComponent_Big img={pngBT} />
+
+## What is this?
+
+This is a custom, 3rd party trigger editor built from scratch.
+
+Unlike plugins like Jass NewGen Pack 2 (JNGP), TESH and similar, this trigger editor is completely separate and works outside the World Editor.
+It expands with new features and aims to improve the user experience for both GUI users and scripters.
+
+To support the new features this editor does not bundle trigger data (.wtg) with your map, but saves the data in a project folder in your filesystem.
+This also means you cannot swap back and forth between this editor and the World Editor's trigger editor.
+Although, it is possible to port existing triggers from a map to this editor from the 'New Project' window.
+
+## Feature Highlights
+
+### Source files outside your map
+
+<br/>
+{
+    <ImageComponent img={gifFileSystem} text="
+    As part of the reworked format all triggers, scripts, variables and categories are no longer saved with your map, but are now located in a project directory as individual files and folders.
+
+
+    <br/><br/><p style='font-style: italic' }}>*This change required the removal of comments in the 'trigger explorer' because the World Editor allows comments with identical names; something a filesystem does not.*</p>
+    " />
+}
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### Convert an existing map's triggers
+<br/>
+{
+    <ImageComponent img={pngDS} text="
+    <p>If you are already working on a Warcraft 3 map and wish to port your triggers to this editor, you can.
+                            When creating a new project you can choose convert an already existing map's triggers. The editor will scan your map for triggers, variables, scripts etc. and converts them to source files readable by this editor.</p>
+                        <br/>
+                        <p style='font-style: italic'>*The illustrated image shows a converted project of mine.</p>
+                    " />
+}
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+### Script live update
+<br/>
+{
+    <ImageComponent img={gifLiveScript} text="
+                        <p>The editor automatically detects changes made to custom script files in your filesystem.
+                            This allows you to work directly in whatever text editor you want and removes the need to copy/paste from external source files into the editor.</p>
+                    " />
+}
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+### Upgraded Script Editor
+<br/>
+{
+    <ImageComponent img={pngSyntax} text="
+                        <p>The built-in script editor has basic syntax highlighting and autocomplete for both Jass and Lua.</p>
+                    " />
+}
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### "StarCraft II"-inspired GUI
+<br/>
+{
+    <ImageComponent img={gifParameters} text="
+                        <p>The GUI has been re-imagined and has the look and feel of Starcraft II's GUI. One of the great things about this is you no longer need to click multiple times on parameter links to get to the bottom of the parameter tree. All parameters are now individually clickable.</p>
+                    " />
+}
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### Local Variables in GUI
+<br/>
+{
+    <ImageComponent img={pngLocalVariables} text="
+                        <p>The GUI supports local variables.</p>
+                        <p>Local variables can only be used in actions, hence why they are placed beneath conditions.</p>
+                        <p>Keep in mind that locals like unit groups and player groups are created every time the trigger runs,
+                            so those are very prone to leaks.
+                        </p>" />
+}
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+### 2D Arrays
+<br/>
+{
+    <ImageComponent img={pngArray2D} text="
+                        <p>The GUI supports 2D arrays for global variables.</p>
+                    " />
+}
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### Frames in GUI
+<br/>
+{
+    <ImageComponent img={pngFramehandles} text="
+                        <p>You can create custom UI with Frames in GUI.</p>
+                    " />
+}
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### Improved GUI to custom script conversion
+<br/>
+{
+    <ImageComponent img={gifGUIConvert} text="
+                        <p>You can convert a GUI trigger to custom script, but also convert it back to it's original GUI triggers if you regret it. Additionally, GUI to script conversion is also available for Lua mode.</p>
+                    " />
+}
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+### Improved GUI to custom script conversion
+<br/>
+{
+    <ImageComponent img={gifThemes} text="
+                        <p>Select between different editor color themes.</p>
+                    " />
+}
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## Planned features
+
+- <a>Trigger template/library importer.</a>
+- <a style={{ color: "#5c5" }}>Keybinding menu.</a>
+- <a>Action- and condition definitions: Define your own re-usable actions and conditions.</a>
+- <a style={{ color: "#5c5" }}>More natives in GUI.</a>
+- <a style={{ color: "#5c5" }}>Local variables.</a>
+- <a style={{ color: "#5c5" }}>Editor color themes.</a>
+- <a>and more...</a>

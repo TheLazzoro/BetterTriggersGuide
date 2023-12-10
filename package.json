@@ -1,29 +1,41 @@
 {
-  "homepage": "https://thelazzoro.github.io/BetterTriggersGuide/",
   "name": "bettertriggersguide",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "Nextra docs template",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "deploy": "gh-pages -d out -t true",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "preview": "vite preview",
+    "export": "next build && next export"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheLazzoro/BetterTriggers.git"
+  },
+  "author": "TheLazzoro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheLazzoro/BetterTriggers/issues"
+  },
+  "homepage": "https://thelazzoro.github.io/BetterTriggersGuide/",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@mui/material": "^5.9.3",
     "gh-pages": "^5.0.0",
+    "next": "^13.0.6",
+    "nextra": "latest",
+    "nextra-theme-docs": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
+    "sharp": "^0.33.0",
+    "node": "^18.18.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
-    "vite": "^4.1.0"
+    "@types/node": "18.11.10",
+    "typescript": "^4.9.3"
   }
 }
