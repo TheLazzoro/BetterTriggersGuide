@@ -4,7 +4,7 @@
   "description": "Nextra docs template",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out -t true",
+    "deploy": "gh-pages -d out",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
