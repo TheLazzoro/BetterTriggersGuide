@@ -10,8 +10,8 @@ module.exports = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: isProd ? "/GuideTest" : ".",
-  basePath: isProd ? '/GuideTest' : '',
+  assetPrefix: isProd ? "/BetterTriggersGuide" : ".",
+  basePath: isProd ? '/BetterTriggersGuide' : '',
 };
 
 // module.exports = withNextra()
