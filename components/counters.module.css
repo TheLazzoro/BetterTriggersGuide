@@ -16,6 +16,10 @@
   width: 40%;
 }
 
+.notYetExpandedImage {
+  filter: drop-shadow(0 0 0.4rem #f90);
+}
+
 .notYetExpandedImage:hover {
   cursor: -webkit-zoom-in;
   cursor: zoom-in;

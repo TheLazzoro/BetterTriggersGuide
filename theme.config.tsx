@@ -13,8 +13,9 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/TheLazzoro/BetterTriggers',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'MIT 2023 © LazZ.',
   },
+  primaryHue: { dark: 37, light: 37 },
 }
 
 export default config
