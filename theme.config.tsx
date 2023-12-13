@@ -15,7 +15,7 @@ const config: DocsThemeConfig = {
   footer: {
     text: 'MIT 2023 © LazZ.',
   },
-  primaryHue: { dark: 37, light: 37 },
+  primaryHue: { dark: 200, light: 200 },
 }
 
 export default config
