@@ -5,6 +5,7 @@ import pngFrameShowHide from "../img/FrameShowHide.png"
 import pngTriggerExplorer from "../img/TriggerExplorer.png"
 import gifLiveScript from "../img/LiveScript.gif"
 import pngProjectFiles from "../img/ProjectFilesExample.PNG"
+import pngMapSave from "../img/MapSave.gif"
 
 import styles from '../components/counters.module.css'
 import { Callout } from 'nextra/components'
@@ -65,6 +66,18 @@ alt="no image"
 - The 'src' folder contains all source files i.e. triggers, variables, scripts etc.
 - The 'dist' folder contains the final map when you click 'Export Map'.
 
+## Workflow
+
+Since Better Triggers is an external tool it only knows about map changes that you last saved.
+All changes in the World Editor must be saved before Better Triggers can detect the changes.
+
+<img
+className="image"
+src={pngMapSave.src}
+alt="no image"
+/>
+
+Once the map has saved Better Triggers will reload all map data, and notify you if any triggers changed as a result of the updated map data.
 
 ## Trigger Explorer
 The trigger explorer in this trigger editor works a lot different than the one in the World Editor,
