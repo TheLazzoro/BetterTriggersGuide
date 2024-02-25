@@ -6,6 +6,7 @@ import pngTriggerExplorer from "../img/TriggerExplorer.png"
 import gifLiveScript from "../img/LiveScript.gif"
 import pngProjectFiles from "../img/ProjectFilesExample.PNG"
 import pngMapSave from "../img/MapSave.gif"
+import pngExportMap from "../img/ExportMap.PNG"
 
 import styles from '../components/counters.module.css'
 import { Callout } from 'nextra/components'
@@ -68,19 +69,7 @@ alt="no image"
 
 ## Workflow
 
-Since Better Triggers is an external tool it only knows about map changes that you last saved.
-All changes in the World Editor must be saved before Better Triggers can detect the changes.
-<br/>
-
-<img
-className="image"
-src={pngMapSave.src}
-alt="no image"
-/>
-
-Once the map has saved Better Triggers will reload all map data, and notify you if any triggers changed as a result of the updated map data.
-
-## Trigger Explorer
+### Trigger Explorer
 The trigger explorer in this trigger editor works a lot different than the one in the World Editor,
 in the way that it's actually a live view of your filesystem from your <code>src</code> folder. <br/><br/>
             
@@ -114,6 +103,31 @@ alt="no image"
 External changes to your scripts are automatically picked up by the editor. This is exclusive to <code>.j</code> and <code>.lua</code> files.
 Content changes to trigger and variable files will not be picked up by the editor, but it's generally not recommended
 to edit those anyway.
+
+### Working between Better Triggers and the World Editor
+
+Since Better Triggers is an external tool it only knows about map changes that you last saved.
+All changes in the World Editor must be saved before Better Triggers can detect the changes.
+<br/>
+
+<img
+className="image"
+src={pngMapSave.src}
+alt="no image"
+/>
+
+Once the map has saved Better Triggers will reload all map data, and notify you if any triggers changed as a result of the updated map data.
+
+### Exporting the final map
+
+When you're ready to export the final map you click the "Export Map" button.
+This will create a separate map file with the generated script in the 'dist' folder in your project.
+
+<img
+className="image"
+src={pngExportMap.src}
+alt="no image"
+/>
 
 
 ## Expanded GUI Tips
