@@ -19,7 +19,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/TheLazzoro/BetterTriggers',
   footer: {
-    text: 'MIT 2023 © LazZ.',
+    text: 'MIT 2024 © LazZ.',
   },
   primaryHue: { dark: 200, light: 200 },
 }
