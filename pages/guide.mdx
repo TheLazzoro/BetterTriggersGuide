@@ -27,22 +27,16 @@ import { Tabs } from 'nextra/components'
 You're now ready and set!
 
 ## Create a project
-To create a project select 'File -&gt; New Project' in the top menu.
+To create a project select 'File -&gt; New Project' in the top navigation menu. There are two options when creating a new project:
 
-You have the option to create an empty project or copy all triggers from an existing map.
-Creating an empty map will generate a new map in the 'map' directory with empty triggers.
+### Empty project
+This option creates a project and creates a new map in the 'map' directory.
+No triggers are created with this option.
 
-When creating a project with existing triggers from a map the tool will extract all folders, triggers, variables, and scripts
-into the 'src' folder in your project. Comments in the Trigger Explorer menu are ignored.
-
-<Callout>
-  **NOTE:** If you're copying triggers from a map that contains variables with upper-/lower case variations of the same name
-e.g. "myVar" and "MyVar" the latter ones will be renamed.
-This is because the filesystem isn't case sensitive by default and conflicts would occur.
-
-As a result, you may experience compile errors after porting.
-</Callout>
-
+### Copy triggers from an existing map
+This option creates a project and extracts all categories, triggers, variables, and scripts from a map,
+into the 'src' folder in your project. Comments in the Trigger Explorer menu are ignored when converting.
+The editor then makes a reference to the map you selected, and you can continue working on that map in the World Editor.
 
 <br/>
 <br/>
@@ -52,9 +46,17 @@ src={pngNewProject.src}
 alt="no image"
 />
 
-<br/>
+<Callout>
+  **NOTE:** If you're copying triggers from a map that contains variables with upper-/lower case variations of the same name
+e.g. "myVar" and "MyVar" the latter ones will be renamed.
+This is because the filesystem isn't case sensitive by default and conflicts would occur.
 
-Creating a new project generates a folder with a project file and three subfolders:
+As a result, you may experience compile errors after porting.
+</Callout>
+
+### Folder structure
+
+Creating a project generates a folder with a project file and three subfolders:
 <br/>
 
 <img
@@ -63,15 +65,15 @@ src={pngProjectFiles.src}
 alt="no image"
 />
 - The project file contains essential information about your project, and is the file you should point to when opening a project.
-- The 'map' folder is not required, but it is the default map location when creating a new project.
+- The 'map' folder is not required, but it is the default map location when creating an empty project.
 - The 'src' folder contains all source files i.e. triggers, variables, scripts etc.
 - The 'dist' folder contains the final map when you click 'Export Map'.
 
 ## Workflow
 
 ### Trigger Explorer
-The trigger explorer in this trigger editor works a lot different than the one in the World Editor,
-in the way that it's actually a live view of your filesystem from your <code>src</code> folder. <br/><br/>
+The trigger explorer in this editor works a lot different than the one in the World Editor,
+because it's actually a live view of your filesystem from your <code>src</code> folder. <br/><br/>
             
 <img
 className="image"
@@ -80,19 +82,10 @@ alt="no image"
 />
 <br/>
 
-<Callout>
-**NOTE:** While you can certainly copy-paste files and entire folders of content in Windows Explorer, it is
-recommended you do these operations through the trigger explorer in Better Triggers. The generated script will
-create triggers and variables with names based on filenames, and if two variables
-or triggers have the same name it will cause script errors. This will not happen when copy-pasting through
-Better Triggers, since the editor will properly rename your files.
+The editor responds to actions you perform in the filesystem, like creating, renaming, copy-pasting, moving and deleting files and folders.
 
-However, script files (<code>.j</code> and <code>.lua</code>) are not affected by this.
-</Callout>
-
-
-The main benefit of this being a live filesystem view is that you can work directly in an external text/code editor 
-without the need to copy-paste the contents into the editor like we are used to in the World Editor:
+You can work directly in external text/code editors without the need to copy-paste the contents into the editor like we are used to in the World Editor.
+Here is an example of using VSCode to edit and save a script file, which Better Triggers immediately registers:
 <br/>
 <img
 className="image"
@@ -100,14 +93,25 @@ src={gifLiveScript.src}
 alt="no image"
 />
 <br/>
-External changes to your scripts are automatically picked up by the editor. This is exclusive to <code>.j</code> and <code>.lua</code> files.
-Content changes to trigger and variable files will not be picked up by the editor, but it's generally not recommended
+This feature is exclusive to <code>.j</code> and <code>.lua</code> files.
+External changes to trigger and variable files will not be picked up by the editor, but it's generally not recommended
 to edit those anyway.
+
+
+<Callout>
+**NOTE:** While you certainly can copy-paste files and entire folders of content in Windows Explorer, it is
+recommended you do these operations through Better Triggers. The generated script
+creates triggers and variables with names based on filenames. If two variables
+or triggers have the same name it will cause script errors. Better Triggers makes sure this doesn't happen and properly renames your files when copy-pasting.
+
+Script files (<code>.j</code> and <code>.lua</code>) are not affected by this, however.
+</Callout>
 
 ### Working between Better Triggers and the World Editor
 
-Since Better Triggers is an external tool it only knows about map changes that you last saved.
+Since Better Triggers is an external tool it only knows about map data from the latest save.
 All changes in the World Editor must be saved before Better Triggers can detect the changes.
+This is illustrated below where Better Triggers locks itself when you save the map in the World Editor.
 <br/>
 
 <img
@@ -116,7 +120,7 @@ src={pngMapSave.src}
 alt="no image"
 />
 
-Once the map has saved Better Triggers will reload all map data, and notify you if any triggers changed as a result of the updated map data.
+Once the map has saved Better Triggers reloads all map data, and notifies you if any triggers changed as a result of the updated map data.
 
 ### Exporting the final map
 
