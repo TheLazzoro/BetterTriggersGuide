@@ -51,7 +51,7 @@ alt="no image"
 e.g. "myVar" and "MyVar" the latter ones will be renamed.
 This is because the filesystem isn't case sensitive by default and conflicts would occur.
 
-As a result, you may experience compile errors after porting.
+As a result, you may experience compile errors in your project.
 </Callout>
 
 ### Folder structure
@@ -133,8 +133,8 @@ alt="no image"
 ## Expanded GUI Tips
 
 ### Local Player
-Better Triggers has implemented '<code>GetLocalPlayer</code>' in GUI.
-This should only be used in if-then-else actions like so:
+Better Triggers has implemented '<code>GetLocalPlayer</code>' in GUI which is shown as 'Local Player' in GUI.
+This should only be used in if-then-else actions:
 <br/>
 <img
 className="image"
@@ -142,7 +142,7 @@ src={pngLocalPlayer.src}
 alt="no image"
 />
 It's generally not recommended to use '<code>Local Player</code>' if you're unfamiliar with it, as it's the number 1 cause of desyncs.
-However, it enables you to do a lot of things, like displaying UI elements (frames) on a per player basis.
+However, it enables you to display things on a per-player bases like UI elements (frames), special effects, text-tags, multiboards etc.
 
 ### Frames
 Since Blizzard has not implemented a generic event for frames, Better Triggers has done a workaround to bring
