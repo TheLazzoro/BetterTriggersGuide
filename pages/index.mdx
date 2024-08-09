@@ -29,9 +29,12 @@ This is a custom, 3rd party trigger editor built from scratch.
 Unlike plugins like Jass NewGen Pack 2 (JNGP), TESH and similar, this trigger editor is completely separate and works outside the World Editor.
 It expands with new features and aims to improve the user experience for both GUI users and scripters.
 
-To support the new features this editor does not bundle trigger data (.wtg) with your map, but saves the data in a project folder in your filesystem.
-This also means you cannot swap back and forth between this editor and the World Editor's trigger editor.
-Although, it is possible to port existing triggers from a map to this editor from the 'New Project' window.
+To support the new features this editor saves your trigger data in a project folder in your filesystem,
+keeping it separate from the World Editor's save format (.wtg). This also means the changes you make in Better Triggers aren't
+synced with the triggers in the World Editor.
+
+However, if you decide that you no longer want to use Better Triggers, there is an option to move all the changes in Better Triggers
+back into the map. Of course, this is not possible if you use 'Better Trigger'-only features.
 
 ## Feature Highlights
 
@@ -284,11 +287,13 @@ Although, it is possible to port existing triggers from a map to this editor fro
 <br/>
 <br/>
 
-### Map Compression and Protection Options
+### Map Export Options
 <br/>
 {
     <ImageComponent img={pngExportMapSettings} text="
                         <p>Finally, the tool offers built-in map compression and protection.</p>
+                        <p>This is also where you can choose to move all trigger changes from your Better Triggers project back into the map.</p>
+                        <p>However, as illustrated in the image, this option is disabled when protection options are enabled.</p>
                     " />
 }
 
